@@ -9,13 +9,16 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
-}
-
 tasks.test {
     useJUnitPlatform()
 }
+
 kotlin {
     jvmToolchain(20)
+}
+
+dependencies {
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
+
+    testImplementation(kotlin("test"))
 }
